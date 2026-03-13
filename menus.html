@@ -5,19 +5,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Fresh baked goods, espresso, and savory lunch in the heart of Tamworth, NH. Open Tue–Sun." />
-  <meta name="theme-color" content="#2C1810" />
+  <meta name="theme-color" content="#8e9582" />
   <meta property="og:title" content="Tamworth Bakery" />
   <meta property="og:description" content="Fresh baked goods, espresso, and savory lunch in the heart of Tamworth, NH. Open Tue–Sun." />
   <meta property="og:type" content="website" />
   
   <title>Menus — Tamworth Bakery</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,400;1,700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet"><style>:root{--font-serif:'Fraunces',Georgia, serif;--font-sans:'Source Sans 3',sans-serif;}</style>
   <style>
     :root {
-      --color-primary: #2C1810;
-      --color-bg-dark: #2C1810;
-      --color-accent: #C8865A;
-      --color-accent-light: #C8865A;
+      --color-primary: #8e9582;
+      --color-bg-dark: #8e9582;
+      --color-accent: #ff8648;
+      --color-accent-light: #ff8648;
     }
   </style>
   <script type="application/ld+json">
@@ -31,7 +32,7 @@
       "streetAddress": "77 Main Street",
       "addressLocality": "Tamworth, NH 03886"
     },
-    "telephone": "",
+    "telephone": "22222222222",
     "email": "info@tamworthbakery.us",
     "url": ""
   }
@@ -127,6 +128,14 @@
       color: var(--color-accent-light);
       min-width: 130px;
     }
+    .bun-img {
+      width: 52px;
+      height: 52px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+      border: 2px solid rgba(255,255,255,.12);
+    }
     .bun-name {
       font-family: var(--font-serif);
       font-size: 1.05rem;
@@ -154,9 +163,9 @@
         <li><a href="index.html"         class="nav-link ">Home</a></li>
         <li><a href="menus.html"         class="nav-link active">Menus</a></li>
         <li><a href="reservations.html"  class="nav-link ">Reservations</a></li>
+        <li><a href="gallery.html"       class="nav-link ">Gallery</a></li>
         <li><a href="about.html"         class="nav-link ">About</a></li>
         <li><a href="contact.html"       class="nav-link ">Contact</a></li>
-        <li><a href="reservations.html"  class="nav-link nav-cta">Reserve a Table</a></li>
       </ul>
       <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -179,7 +188,7 @@
       <div class="container">
 
         <!-- Bun Schedule -->
-        <div class="bun-schedule fade-up">
+        <div id="daily-rotation" class="bun-schedule fade-up">
           <div>
             <p class="section-label" style="color:var(--color-accent-light)">Daily Rotation</p>
             <h2 class="bun-schedule-heading">Specialty Bun Schedule</h2>
@@ -187,17 +196,35 @@
           </div>
           <div>
             
+            
+            
+            
             <div class="bun-row">
+              
+              <img src="images/gallery2.jpg" alt="Why Knots" class="bun-img" />
+              
               <span class="bun-day">Tue &amp; Wed</span>
               <span class="bun-name">Why Knots</span>
             </div>
             
+            
+            
+            
             <div class="bun-row">
+              
+              <img src="images/gallery3.jpg" alt="Maple Pecan Sticky Buns" class="bun-img" />
+              
               <span class="bun-day">Thursday</span>
               <span class="bun-name">Maple Pecan Sticky Buns</span>
             </div>
             
+            
+            
+            
             <div class="bun-row">
+              
+              <img src="images/gallery4.jpg" alt="Cardamom Cream Buns" class="bun-img" />
+              
               <span class="bun-day">Fri &amp; Sat</span>
               <span class="bun-name">Cardamom Cream Buns</span>
             </div>
@@ -223,19 +250,19 @@
               <div class="menu-cat-item">
                 <span class="menu-cat-item-name">Espresso</span>
                 <span class="menu-cat-item-note">Single or double</span>
-                
+                <span class="menu-cat-item-price">$10.00</span>
               </div>
               
               <div class="menu-cat-item">
                 <span class="menu-cat-item-name">Americano</span>
                 
-                
+                <span class="menu-cat-item-price">$10.00</span>
               </div>
               
               <div class="menu-cat-item">
                 <span class="menu-cat-item-name">Cappuccino</span>
                 
-                
+                <span class="menu-cat-item-price">$10.00</span>
               </div>
               
               <div class="menu-cat-item">
@@ -466,9 +493,9 @@
           <div class="footer-logo">Tamworth<span>.</span></div>
           <p class="footer-tagline">A cozy bakery and café on Main Street, serving the Tamworth community with fresh baked goods, espresso, and warm hospitality.</p>
           <div class="social-links">
-            <a href="#" class="social-link" aria-label="Facebook">f</a>
-            <a href="#" class="social-link" aria-label="Instagram">📷</a>
-            <a href="#" class="social-link" aria-label="Twitter/X">𝕏</a>
+            <a href="" class="social-link" aria-label="Facebook">f</a>
+            <a href="" class="social-link" aria-label="Instagram">📷</a>
+            <a href="" class="social-link" aria-label="Twitter/X">𝕏</a>
           </div>
         </div>
         <div>
@@ -510,7 +537,7 @@
         <div>
           <p class="footer-col-title">Contact</p>
           <ul class="footer-links">
-            <li><a href="tel:" class="footer-link">22222222222</a></li>
+            <li><a href="tel:22222222222" class="footer-link">22222222222</a></li>
             <li><a href="mailto:info@tamworthbakery.us" class="footer-link">info@tamworthbakery.us</a></li>
             <li><span class="footer-link" style="cursor:default">77 Main Street</span></li>
             <li><span class="footer-link" style="cursor:default">Tamworth, NH 03886</span></li>

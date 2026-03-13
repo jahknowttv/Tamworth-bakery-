@@ -581,6 +581,84 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-style: italic;
 }
 
+/* ── Full Menu Page Grid ── */
+.menu-page-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.menu-cat-card {
+  background: var(--color-white);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.menu-cat-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px;
+  background: var(--color-bg-warm);
+  border-bottom: 1.5px solid var(--color-border);
+}
+
+.menu-cat-icon { font-size: 1.4rem; flex-shrink: 0; }
+
+.menu-cat-name {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.menu-cat-items {
+  padding: 8px 0;
+}
+
+.menu-cat-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  column-gap: 12px;
+  row-gap: 2px;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--color-border);
+  transition: background .15s;
+}
+.menu-cat-item:last-child { border-bottom: none; }
+.menu-cat-item:hover { background: rgba(200,134,90,.05); }
+
+.menu-cat-item-name {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--color-text);
+  align-self: center;
+}
+
+.menu-cat-item-note {
+  grid-column: 1;
+  grid-row: 2;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.menu-cat-item-price {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  white-space: nowrap;
+  align-self: center;
+  text-align: right;
+}
+
 /* ── About Section ── */
 .about-section { background: var(--color-bg); }
 
@@ -732,6 +810,48 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-size: 1.6rem;
 }
 .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+
+/* ── Full Gallery Page ── */
+.gallery-page-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.gallery-page-item {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  aspect-ratio: 1 / 1;
+}
+.gallery-page-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+.gallery-page-item:hover img { transform: scale(1.06); }
+.gallery-page-item:hover .gallery-item-overlay { opacity: 1; }
+.gallery-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(15,8,4,.75));
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 24px 10px 10px;
+  line-height: 1.4;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .25s;
+}
+.gallery-page-item:hover .gallery-caption { opacity: 1; }
+
+@media (max-width: 1024px) {
+  .gallery-page-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .gallery-page-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+}
 
 /* ── Location / Contact ── */
 .contact-section { background: var(--color-bg); }
@@ -1091,8 +1211,8 @@ textarea { resize: vertical; min-height: 120px; }
 
 /* ── Responsive ── */
 @media (max-width: 1024px) {
-  .hero-content { grid-template-columns: 1fr; gap: 40px; max-width: 660px; }
-  .hero-card { display: none; }
+  .hero-content { grid-template-columns: 1fr; gap: 32px; max-width: 660px; }
+  .hero-card { padding: 24px; }
   .specials-grid { grid-template-columns: 1fr 1fr; }
   .about-layout { grid-template-columns: 1fr; gap: 48px; }
   .about-images { height: 380px; }

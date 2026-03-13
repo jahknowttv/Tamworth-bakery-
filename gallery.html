@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fresh baked goods, espresso, and savory lunch in the heart of Tamworth, NH. Open Tue–Sun." />
+  <meta name="theme-color" content="#8e9582" />
+  <meta property="og:title" content="Tamworth Bakery" />
+  <meta property="og:description" content="Fresh baked goods, espresso, and savory lunch in the heart of Tamworth, NH. Open Tue–Sun." />
+  <meta property="og:type" content="website" />
+  
+  <title>Gallery — Tamworth Bakery</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,400;1,700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet"><style>:root{--font-serif:'Fraunces',Georgia, serif;--font-sans:'Source Sans 3',sans-serif;}</style>
+  <style>
+    :root {
+      --color-primary: #8e9582;
+      --color-bg-dark: #8e9582;
+      --color-accent: #ff8648;
+      --color-accent-light: #ff8648;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Tamworth Bakery",
+    "description": "Fresh baked goods, espresso, and savory lunch in the heart of Tamworth, NH. Open Tue–Sun.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "77 Main Street",
+      "addressLocality": "Tamworth, NH 03886"
+    },
+    "telephone": "22222222222",
+    "email": "info@tamworthbakery.us",
+    "url": ""
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  
+</head>
+<body>
+
+    <nav class="nav scrolled" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Tamworth<span>.</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html"         class="nav-link ">Home</a></li>
+        <li><a href="menus.html"         class="nav-link ">Menus</a></li>
+        <li><a href="reservations.html"  class="nav-link ">Reservations</a></li>
+        <li><a href="gallery.html"       class="nav-link active">Gallery</a></li>
+        <li><a href="about.html"         class="nav-link ">About</a></li>
+        <li><a href="contact.html"       class="nav-link ">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  
+
+  <!-- ── Page Hero ── -->
+  <section style="background:linear-gradient(160deg,rgba(30,18,12,.85) 0%,rgba(44,24,16,.7) 100%),
+                  var(--color-bg-dark);padding:120px 24px 64px;text-align:center;">
+    <span class="section-label" style="color:rgba(200,134,90,.9);">From Our Kitchen</span>
+    <h1 style="font-family:var(--font-serif);font-size:clamp(2.2rem,5vw,3.4rem);
+               font-weight:700;color:#fff;margin:16px 0 0;line-height:1.1;">
+      Our Gallery
+    </h1>
+    <p style="color:rgba(255,255,255,.6);font-size:1rem;margin-top:14px;">
+      Tap any photo to view it full size
+    </p>
+  </section>
+
+  <!-- ── Full Gallery Grid ── -->
+  <section class="gallery-section">
+    <div class="container">
+
+      
+      <div class="gallery-page-grid fade-up">
+        
+        <div class="gallery-page-item" onclick="openLightbox(0)" tabindex="0"
+             onkeydown="if(event.key==='Enter')openLightbox(0)">
+          <img src="images/hero.jpg" alt="Artisan loaves" loading="lazy" />
+          <div class="gallery-item-overlay">🔍</div>
+          
+          <div class="gallery-caption">Artisan loaves</div>
+          
+        </div>
+        
+        <div class="gallery-page-item" onclick="openLightbox(1)" tabindex="0"
+             onkeydown="if(event.key==='Enter')openLightbox(1)">
+          <img src="images/gallery1.jpg" alt="Morning pastries" loading="lazy" />
+          <div class="gallery-item-overlay">🔍</div>
+          
+          <div class="gallery-caption">Morning pastries</div>
+          
+        </div>
+        
+        <div class="gallery-page-item" onclick="openLightbox(2)" tabindex="0"
+             onkeydown="if(event.key==='Enter')openLightbox(2)">
+          <img src="images/gallery5.jpg" alt="Specialty drinks" loading="lazy" />
+          <div class="gallery-item-overlay">🔍</div>
+          
+          <div class="gallery-caption">Specialty drinks</div>
+          
+        </div>
+        
+        <div class="gallery-page-item" onclick="openLightbox(3)" tabindex="0"
+             onkeydown="if(event.key==='Enter')openLightbox(3)">
+          <img src="images/gallery6.jpg" alt="Latte art" loading="lazy" />
+          <div class="gallery-item-overlay">🔍</div>
+          
+          <div class="gallery-caption">Latte art</div>
+          
+        </div>
+        
+        <div class="gallery-page-item" onclick="openLightbox(4)" tabindex="0"
+             onkeydown="if(event.key==='Enter')openLightbox(4)">
+          <img src="images/about_hero.jpg" alt="Bakery interior" loading="lazy" />
+          <div class="gallery-item-overlay">🔍</div>
+          
+          <div class="gallery-caption">Bakery interior</div>
+          
+        </div>
+        
+      </div>
+      
+
+      <div style="text-align:center;margin-top:56px;" class="fade-up">
+        <a href="index.html" class="btn btn-outline">← Back to Home</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Lightbox ── -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer"
+       style="display:none;position:fixed;inset:0;z-index:9999;
+              background:rgba(15,8,4,.95);backdrop-filter:blur(8px);
+              align-items:center;justify-content:center;flex-direction:column;">
+
+    <!-- Close -->
+    <button onclick="closeLightbox()"
+            style="position:absolute;top:20px;right:20px;background:rgba(255,255,255,.12);
+                   border:none;color:#fff;font-size:1.4rem;width:44px;height:44px;
+                   border-radius:50%;cursor:pointer;touch-action:manipulation;
+                   display:flex;align-items:center;justify-content:center;z-index:1;">✕</button>
+
+    <!-- Counter -->
+    <div id="lb-counter"
+         style="position:absolute;top:24px;left:50%;transform:translateX(-50%);
+                color:rgba(255,255,255,.45);font-size:0.82rem;letter-spacing:.06em;"></div>
+
+    <!-- Prev -->
+    <button onclick="moveLightbox(-1)"
+            style="position:absolute;left:12px;top:50%;transform:translateY(-50%);
+                   background:rgba(255,255,255,.12);border:none;color:#fff;
+                   font-size:1.6rem;width:48px;height:48px;border-radius:50%;
+                   cursor:pointer;touch-action:manipulation;
+                   display:flex;align-items:center;justify-content:center;">‹</button>
+
+    <!-- Next -->
+    <button onclick="moveLightbox(1)"
+            style="position:absolute;right:12px;top:50%;transform:translateY(-50%);
+                   background:rgba(255,255,255,.12);border:none;color:#fff;
+                   font-size:1.6rem;width:48px;height:48px;border-radius:50%;
+                   cursor:pointer;touch-action:manipulation;
+                   display:flex;align-items:center;justify-content:center;">›</button>
+
+    <!-- Image -->
+    <img id="lb-img" src="" alt=""
+         style="max-width:min(90vw,1100px);max-height:75vh;object-fit:contain;
+                border-radius:8px;box-shadow:0 24px 64px rgba(0,0,0,.6);
+                transition:opacity .2s;" />
+
+    <!-- Caption -->
+    <p id="lb-caption"
+       style="color:rgba(255,255,255,.75);font-size:0.95rem;margin-top:18px;
+              text-align:center;max-width:560px;padding:0 24px;line-height:1.6;
+              min-height:1.4em;"></p>
+  </div>
+
+  <!-- Image data for lightbox -->
+  <script>
+    const IMAGES = [
+      
+      { src: "images/hero.jpg", alt: "Artisan loaves" },
+      
+      { src: "images/gallery1.jpg", alt: "Morning pastries" },
+      
+      { src: "images/gallery5.jpg", alt: "Specialty drinks" },
+      
+      { src: "images/gallery6.jpg", alt: "Latte art" },
+      
+      { src: "images/about_hero.jpg", alt: "Bakery interior" }
+      
+    ];
+
+    let current = 0;
+    let touchStartX = 0;
+
+    function openLightbox(idx) {
+      current = idx;
+      const lb = document.getElementById('lightbox');
+      lb.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      showImage(current);
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    function showImage(idx) {
+      const img = document.getElementById('lb-img');
+      const caption = document.getElementById('lb-caption');
+      const counter = document.getElementById('lb-counter');
+      img.style.opacity = '0';
+      setTimeout(() => {
+        img.src = IMAGES[idx].src;
+        img.alt = IMAGES[idx].alt;
+        caption.textContent = IMAGES[idx].alt || '';
+        counter.textContent = (idx + 1) + ' / ' + IMAGES.length;
+        img.style.opacity = '1';
+      }, 150);
+    }
+
+    function moveLightbox(dir) {
+      current = (current + dir + IMAGES.length) % IMAGES.length;
+      showImage(current);
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', e => {
+      const lb = document.getElementById('lightbox');
+      if (lb.style.display === 'none') return;
+      if (e.key === 'ArrowRight') moveLightbox(1);
+      if (e.key === 'ArrowLeft')  moveLightbox(-1);
+      if (e.key === 'Escape')     closeLightbox();
+    });
+
+    // Swipe support
+    document.getElementById('lightbox').addEventListener('touchstart', e => {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+    document.getElementById('lightbox').addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 50) moveLightbox(dx < 0 ? 1 : -1);
+    });
+
+    // Click backdrop to close
+    document.getElementById('lightbox').addEventListener('click', e => {
+      if (e.target === document.getElementById('lightbox')) closeLightbox();
+    });
+  </script>
+
+
+
+    <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">Tamworth<span>.</span></div>
+          <p class="footer-tagline">A cozy bakery and café on Main Street, serving the Tamworth community with fresh baked goods, espresso, and warm hospitality.</p>
+          <div class="social-links">
+            <a href="" class="social-link" aria-label="Facebook">f</a>
+            <a href="" class="social-link" aria-label="Instagram">📷</a>
+            <a href="" class="social-link" aria-label="Twitter/X">𝕏</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer-col-title">Navigate</p>
+          <ul class="footer-links">
+            <li><a href="index.html"       class="footer-link">Home</a></li>
+            <li><a href="menus.html"       class="footer-link">Menus</a></li>
+            <li><a href="reservations.html" class="footer-link">Reservations</a></li>
+            <li><a href="about.html"       class="footer-link">About Us</a></li>
+            <li><a href="contact.html"     class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Hours</p>
+          <ul class="footer-hours-list">
+            
+            <li class="footer-hours-item">
+              <span class="footer-hours-day">Tuesday – Saturday</span>
+              <span class="footer-hours-time">8:00 AM – 2:00 PM</span>
+            </li>
+            
+            <li class="footer-hours-item">
+              <span class="footer-hours-day">Sunday</span>
+              <span class="footer-hours-time">10:00 AM – 2:00 PM</span>
+            </li>
+            
+            <li class="footer-hours-item">
+              <span class="footer-hours-day">Thursday &amp; Friday</span>
+              <span class="footer-hours-time">5:00 PM – 9:00 PM</span>
+            </li>
+            
+            <li class="footer-hours-item">
+              <span class="footer-hours-day">Monday</span>
+              <span class="footer-hours-time">Closed</span>
+            </li>
+            
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Contact</p>
+          <ul class="footer-links">
+            <li><a href="tel:22222222222" class="footer-link">22222222222</a></li>
+            <li><a href="mailto:info@tamworthbakery.us" class="footer-link">info@tamworthbakery.us</a></li>
+            <li><span class="footer-link" style="cursor:default">77 Main Street</span></li>
+            <li><span class="footer-link" style="cursor:default">Tamworth, NH 03886</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2024 Tamworth Bakery. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          <a href="#" class="footer-bottom-link">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

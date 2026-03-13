@@ -5,19 +5,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Fresh baked goods, espresso, and savory lunch in the heart of Tamworth, NH. Open Tue–Sun." />
-  <meta name="theme-color" content="#2C1810" />
+  <meta name="theme-color" content="#8e9582" />
   <meta property="og:title" content="Tamworth Bakery" />
   <meta property="og:description" content="Fresh baked goods, espresso, and savory lunch in the heart of Tamworth, NH. Open Tue–Sun." />
   <meta property="og:type" content="website" />
   
   <title>Reservations — Tamworth Bakery</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,400;1,700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet"><style>:root{--font-serif:'Fraunces',Georgia, serif;--font-sans:'Source Sans 3',sans-serif;}</style>
   <style>
     :root {
-      --color-primary: #2C1810;
-      --color-bg-dark: #2C1810;
-      --color-accent: #C8865A;
-      --color-accent-light: #C8865A;
+      --color-primary: #8e9582;
+      --color-bg-dark: #8e9582;
+      --color-accent: #ff8648;
+      --color-accent-light: #ff8648;
     }
   </style>
   <script type="application/ld+json">
@@ -31,7 +32,7 @@
       "streetAddress": "77 Main Street",
       "addressLocality": "Tamworth, NH 03886"
     },
-    "telephone": "",
+    "telephone": "22222222222",
     "email": "info@tamworthbakery.us",
     "url": ""
   }
@@ -50,9 +51,9 @@
         <li><a href="index.html"         class="nav-link ">Home</a></li>
         <li><a href="menus.html"         class="nav-link ">Menus</a></li>
         <li><a href="reservations.html"  class="nav-link active">Reservations</a></li>
+        <li><a href="gallery.html"       class="nav-link ">Gallery</a></li>
         <li><a href="about.html"         class="nav-link ">About</a></li>
         <li><a href="contact.html"       class="nav-link ">Contact</a></li>
-        <li><a href="reservations.html"  class="nav-link nav-cta">Reserve a Table</a></li>
       </ul>
       <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -238,6 +239,7 @@
                 <label for="resNotes">Special Requests or Notes</label>
                 <textarea id="resNotes" name="notes" placeholder="Dietary restrictions, accessibility needs, celebrations…"></textarea>
               </div>
+              <div id="resError" style="display:none;background:#fef2f2;border:1px solid #fca5a5;border-radius:8px;padding:12px 16px;margin-bottom:12px;font-size:0.88rem;color:#b91c1c;"></div>
               <button type="submit" class="btn form-submit">Request Reservation</button>
               <p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:12px;text-align:center">
                 We'll confirm your reservation by email within a few hours.
@@ -247,6 +249,7 @@
               <div class="form-success-icon">🎉</div>
               <h3 class="form-success-title">Reservation Request Sent!</h3>
               <p class="form-success-text">Thank you! We'll confirm your table by email soon. We look forward to seeing you at Tamworth Bakery.</p>
+              <button onclick="resetResForm()" style="margin-top:20px;background:none;border:2px solid var(--color-primary);color:var(--color-primary);padding:10px 24px;border-radius:8px;cursor:pointer;font-size:0.9rem;font-weight:600;">Make Another Reservation</button>
             </div>
           </div>
         </div>
@@ -260,24 +263,39 @@
       <h2 class="cta-banner-title">Need Help Booking?</h2>
       <p class="cta-banner-sub">Call us directly at 22222222222 or send us a message.</p>
       <div class="cta-actions">
-        <a href="tel:" class="btn btn-primary">Call Us</a>
+        <a href="tel:22222222222" class="btn btn-primary">Call Us</a>
         <a href="contact.html"    class="btn btn-light">Send a Message</a>
       </div>
     </div>
   </section>
 
   <script>
-    // Override reservation form to POST to API
     (function() {
       var form = document.getElementById('reservationForm');
       var success = document.getElementById('resSuccess');
+      var errorBox = document.getElementById('resError');
       if (!form) return;
+
       var dateInput = form.querySelector('#resDate');
-      if (dateInput) {
-        dateInput.setAttribute('min', new Date().toISOString().split('T')[0]);
+      if (dateInput) dateInput.setAttribute('min', new Date().toISOString().split('T')[0]);
+
+      function showError(msg) {
+        errorBox.textContent = msg;
+        errorBox.style.display = 'block';
+        errorBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
+      function clearError() { errorBox.style.display = 'none'; }
+
+      window.resetResForm = function() {
+        form.reset();
+        form.style.display = '';
+        success.classList.remove('visible');
+        clearError();
+      };
+
       form.addEventListener('submit', function(e) {
         e.preventDefault();
+        clearError();
         var btn = form.querySelector('.form-submit');
         var orig = btn.textContent;
         btn.textContent = 'Sending\u2026';
@@ -290,16 +308,16 @@
           .then(function(json) {
             if (json.ok) {
               form.style.display = 'none';
-              if (success) success.classList.add('visible');
+              success.classList.add('visible');
             } else {
               btn.textContent = orig;
               btn.disabled = false;
-              alert(json.error || 'Something went wrong. Please try again.');
+              showError(json.error || 'Something went wrong. Please try again.');
             }
           }).catch(function() {
             btn.textContent = orig;
             btn.disabled = false;
-            alert('Unable to send request. Please try again or call us directly.');
+            showError('Unable to send request. Please try again or call us directly.');
           });
       }, true);
     })();
@@ -314,9 +332,9 @@
           <div class="footer-logo">Tamworth<span>.</span></div>
           <p class="footer-tagline">A cozy bakery and café on Main Street, serving the Tamworth community with fresh baked goods, espresso, and warm hospitality.</p>
           <div class="social-links">
-            <a href="#" class="social-link" aria-label="Facebook">f</a>
-            <a href="#" class="social-link" aria-label="Instagram">📷</a>
-            <a href="#" class="social-link" aria-label="Twitter/X">𝕏</a>
+            <a href="" class="social-link" aria-label="Facebook">f</a>
+            <a href="" class="social-link" aria-label="Instagram">📷</a>
+            <a href="" class="social-link" aria-label="Twitter/X">𝕏</a>
           </div>
         </div>
         <div>
@@ -358,7 +376,7 @@
         <div>
           <p class="footer-col-title">Contact</p>
           <ul class="footer-links">
-            <li><a href="tel:" class="footer-link">22222222222</a></li>
+            <li><a href="tel:22222222222" class="footer-link">22222222222</a></li>
             <li><a href="mailto:info@tamworthbakery.us" class="footer-link">info@tamworthbakery.us</a></li>
             <li><span class="footer-link" style="cursor:default">77 Main Street</span></li>
             <li><span class="footer-link" style="cursor:default">Tamworth, NH 03886</span></li>
